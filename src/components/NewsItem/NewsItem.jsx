@@ -1,11 +1,12 @@
 import styles from './NewsItem.module.css'
 import { formatTimeAgo } from '../../helpers/formatTimeAgo'
+import img from '../../assets/no-img.jpg'
 
 
 const NewsItem = ({item}) => {
   return (
     <li className={styles.item} >
-      <div className={styles.wrapper} style={{backgroundImage: `url(${item.image})`}}>
+      <div className={styles.wrapper} style={{backgroundImage: `url(${item.image === 'None' ? img : item.image})`}}>
 
       </div>
       <div className={styles.info} >
