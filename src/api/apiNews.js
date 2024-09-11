@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios'
 
 const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL
@@ -27,6 +28,20 @@ export const getCategories = async (page_number = 1, page_size = 10) => {
             params: {
                 apiKey: API_KEY,
                 
+            }
+        })
+        return response.data
+    }
+    catch(e) {
+        console.error(e)
+    }
+}
+
+export const getLatestNews = async () => {
+    try{
+        const response = await axios.get(`${BASE_URL}latest-news`, {
+            params: {
+                apiKey: API_KEY,
             }
         })
         return response.data
