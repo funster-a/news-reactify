@@ -2,14 +2,13 @@
     display: flex;
     width: 100%;
     gap: 12px;
-    background-color: white;
 
 }
 
 .input {
     width: 100%;
     padding: 6px 10px;
-    border: 1px solid #f2f3f5;
+    border: 1px solid #87898f;
     border-radius: 12px;
-    
+
 }
