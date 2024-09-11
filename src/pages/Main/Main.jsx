@@ -37,7 +37,7 @@ const Main = () => {
         filters={filters}
         changeFilter={changeFilter}
       />
-        
+
     </main>
   )
 }
