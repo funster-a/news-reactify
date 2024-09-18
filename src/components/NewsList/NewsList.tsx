@@ -1,21 +1,23 @@
 import styles from './NewsList.module.css'
-import { formatTimeAgo } from '../../helpers/formatTimeAgo'
-import Image from '../Image/Image'
 import NewsItem from '../NewsItem/NewsItem'
 import withSkeleton from '../../helpers/hocs/withSkeleton'
+import { INews } from '../../interfaces'
 
+interface Props {
+  news?: INews[];
+}
 
-const NewsList = ({news}) => {
+const NewsList = ({news}: Props) => {
   return (
     <div className={styles.banner} >
-        {news.map(item => {
+        {news?.map(item => {
           return <NewsItem key={item.id} item={item} />
         })}
     </div>
   )
 }
 
-const NewsListWithSkeleton = withSkeleton(NewsList, 'item', 10)
+const NewsListWithSkeleton = withSkeleton<Props>(NewsList, 'item', 10)
 
 
 export default NewsListWithSkeleton
