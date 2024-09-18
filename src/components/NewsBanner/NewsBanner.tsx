@@ -2,8 +2,13 @@ import styles from './NewsBanner.module.css'
 import { formatTimeAgo } from '../../helpers/formatTimeAgo'
 import Image from '../Image/Image'
 import img from '../../assets/no-img.jpg'
+import { INews } from '../../interfaces';
 
-const NewsBanner = ({item}) => {
+interface Props {
+  item: INews;
+}
+
+const NewsBanner = ({item}: Props) => {
   return (
     <div className={styles.banner} >
         <Image image={item.image === 'None' ? img : item.image} />
