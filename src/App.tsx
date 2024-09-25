@@ -1,9 +1,10 @@
 import Header from './components/Header/Header'
+import { useTheme } from './context/ThemeContext';
 import Main from './pages/Main/Main'
-import { ThemeProvider, useTheme } from './context/ThemeContext';
 
 function App() {  
-  const {isDark} = useTheme();
+  const {isDark} = useTheme()
+
   return (
       <div className={`app ${isDark ? 'dark' : 'light'}`}>
         <Header/>
